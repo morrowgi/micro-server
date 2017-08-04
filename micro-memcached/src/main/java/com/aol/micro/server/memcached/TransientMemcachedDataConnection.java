@@ -1,4 +1,4 @@
-package com.aol.micro.server.elasticache;
+package com.aol.micro.server.memcached;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -58,13 +58,4 @@ public class TransientElasticacheDataConnection<V> implements DistributedCacheMa
             return (Optional<V>) Optional.ofNullable(memcachedClient.get(key));
         }
 
-        @Override
-        public boolean isAvailable() {
-            return available;
-        }
-
-        @Override
-        public final void setConnectionTested(final boolean available) {
-            this.available = available;
-        }
 }

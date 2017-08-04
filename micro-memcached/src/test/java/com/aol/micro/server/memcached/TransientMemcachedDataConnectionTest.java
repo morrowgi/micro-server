@@ -42,21 +42,4 @@ public class TransientElasticacheDataConnectionTest {
         TransientElasticacheDataConnection transientClient = new TransientElasticacheDataConnection(memcachedClient, 3, 1);
         assertEquals(false, transientClient.add("keyAdd", 3600, "valueadd"));
     }
-
-    @Test
-    public void testIsAvailableFalse() {
-        TransientElasticacheDataConnection transientClient = new TransientElasticacheDataConnection(memcachedClient, 3, 1);
-        transientClient.setConnectionTested(false);
-        assertEquals(false, transientClient.isAvailable());
-    }
-
-    @Test
-    public void testIsAvailableTrue() {
-        TransientElasticacheDataConnection transientClient = new TransientElasticacheDataConnection(memcachedClient, 3, 1);
-        transientClient.setConnectionTested(true);
-        assertEquals(true, transientClient.isAvailable());
-    }
-
-
-
 }
