@@ -1,12 +1,12 @@
-package com.aol.micro.server.elasticache;
+package com.aol.micro.server.memcached;
 
 import com.aol.micro.server.Plugin;
 import cyclops.collections.immutable.PersistentSetX;
 
-public class ElasticachePlugin implements Plugin {
+public class MemcachedPlugin implements Plugin {
 
     @Override
     public PersistentSetX<Class> springClasses() {
-            return PersistentSetX.of(ConfigureElasticache.class);
+            return PersistentSetX.of(ConfigureMemcached.class);
         }
 }

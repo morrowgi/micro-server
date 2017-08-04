@@ -2,15 +2,13 @@ apply plugin: 'groovy'
 apply plugin: 'java'
 repositories {}
 
-description = 'micro-elasticache'
+description = 'micro-memcached'
 dependencies {
-	compile group: 'com.amazonaws', name: 'aws-java-sdk-elasticache', version: '1.11.126'
 	compile group: 'net.spy', name: 'spymemcached', version: '2.12.3'
 	compile project(':micro-core')
 	compile project(':micro-guava')
 	testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version:'2.3.3'
-	testCompile(group: 'org.spockframework', name: 'spock-core', version:'0.7-groovy-2.0') { exclude(module: 'groovy-all') }
-	testCompile group: 'com.cyrusinnovation', name: 'mockito-groovy-support', version:'1.3'
+	//testCompile group: 'com.cyrusinnovation', name: 'mockito-groovy-support', version:'1.3'
 	testCompile 'cglib:cglib-nodep:2.2'
 	testCompile group: 'org.hamcrest', name: 'hamcrest-all', version:hamcrestVersion
 	testCompile project(':micro-grizzly-with-jersey')
@@ -32,13 +30,13 @@ sourceSets {
 
 modifyPom {
 	project {
-		name 'Microserver elasticache'
+		name 'Microserver memcached'
 		description 'Opinionated rest microservices'
 		url 'https://github.com/aol/micro-server'
 		inceptionYear '2015'
 
 		groupId 'com.aol.microservices'
-		artifactId 'micro-elasticache'
+		artifactId 'micro-memcached'
 		version "$version" 
 		
 		

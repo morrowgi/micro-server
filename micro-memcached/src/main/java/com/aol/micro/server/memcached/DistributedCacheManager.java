@@ -1,4 +1,4 @@
-package com.aol.micro.server.elasticache;
+package com.aol.micro.server.memcached;
 import java.util.Optional;
 
 public interface DistributedCacheManager<V> {

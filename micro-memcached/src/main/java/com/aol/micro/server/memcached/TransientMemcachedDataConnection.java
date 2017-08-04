@@ -1,21 +1,18 @@
 package com.aol.micro.server.memcached;
 
 import lombok.extern.slf4j.Slf4j;
-
 import java.util.Optional;
 import net.spy.memcached.MemcachedClient;
-import lombok.extern.slf4j.Slf4j;
-
 
 @Slf4j
-public class TransientElasticacheDataConnection<V> implements DistributedCacheManager<V> {
+public class TransientMemcachedDataConnection<V> implements DistributedCacheManager<V> {
 
         private volatile boolean available = false;
         private final MemcachedClient memcachedClient;
         private final int retryAfterSec;
         private final int maxTry;
 
-        public TransientElasticacheDataConnection(MemcachedClient memcachedClient,int retryAfterSec, int maxTry) {
+        public TransientMemcachedDataConnection(MemcachedClient memcachedClient, int retryAfterSec, int maxTry) {
             this.memcachedClient = memcachedClient;
             this.retryAfterSec = retryAfterSec;
             this.maxTry = maxTry;

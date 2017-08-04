@@ -1,1 +1,1 @@
-com.aol.micro.server.elasticache.ElasticachePlugin
+com.aol.micro.server.memcached.MemcachedPlugin
